@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    image: huandrey/backend-guardiao:latest
+    container_name: backend-guardiao
+    # Porta local : Porta do container
+    # Você pode alterar o número à esquerda (ex: 8080) se já estiver em uso no servidor
+    ports:
+      - "8080:8080"  
+    restart: unless-stopped
+
+  frontend:
+    image: huandrey/odonto-guardiao:latest
+    container_name: odonto-guardiao
+    # Porta local : Porta do container
+    # Altere o número à esquerda (ex: 3000) se quiser que a interface rode em outra porta
+    ports:
+      - "3000:80"  
+    restart: unless-stopped
+
