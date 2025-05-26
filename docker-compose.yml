@@ -9,6 +9,8 @@ services:
     ports:
       - "8080:8080"  
     restart: unless-stopped
+    volumes:
+      - denuncias_data:/app/data
 
   frontend:
     image: huandrey/odonto-guardiao:latest
@@ -19,3 +21,5 @@ services:
       - "3000:80"  
     restart: unless-stopped
 
+volumes:
+  denuncias_data:
