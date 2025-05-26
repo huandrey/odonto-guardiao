@@ -27,6 +27,7 @@ Este comando irá:
 
 - Baixar as imagens do Docker Hub
 - Criar dois containers: um para o backend e outro para o frontend
+- **Criar um volume do Docker para persistência dos dados**
 - Expor as portas padrão:
   
 ```bash
@@ -35,3 +36,9 @@ Backend: http://localhost:8080
 ````
 
 ⚠️ Você pode alterar as portas no arquivo docker-compose.yml se necessário, caso alguma já esteja em uso.
+
+## 💾 Sobre o Docker Volume
+O sistema utiliza volumes do Docker para persistir dados importantes, como arquivos de configuração e dados do banco de dados, mesmo após a reinicialização ou remoção dos containers.
+
+Cuidados:
+- Não remova o volume manualmente, a menos que queira apagar todos os dados persistidos.
